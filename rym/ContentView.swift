@@ -63,6 +63,9 @@ struct ContentView: View {
                 ScrollView {
                     ScrollViewReader { value in
                         VStack {
+                            NavigationLink(destination: FavoritesView(favoriteIds: favorites)) {
+                                Text("Mis Favoritos")
+                            }
                             ForEach(characters, id: \.id) { character in
                                 HStack {
                                     NavigationLink(destination: CharacterView(character:  character, isFavorite: self.favorites.contains(character.id))) {
